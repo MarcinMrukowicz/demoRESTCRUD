@@ -30,4 +30,14 @@ public class TransactionController {
         //System.out.println(t.getConctractor());
         return transactionRepository.save(transaction);
     }
+    @DeleteMapping
+    private Transaction deleteTransaction(@RequestBody Transaction transaction) {
+        transactionRepository.delete(transaction);
+        return transaction;
+    }
+
+    @PutMapping
+    private Transaction updateTransaction(@RequestBody Transaction transaction) {
+        return transactionRepository.save(transaction);
+    }
 }

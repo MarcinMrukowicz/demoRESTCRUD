@@ -20,4 +20,13 @@ public class UnitController {
     private Unit addUnit(@RequestBody Unit unit) {
         return unitRepository.save(unit);
     }
+    @DeleteMapping
+    private Unit deleteUnit(@RequestBody Unit unit) {
+        unitRepository.delete(unit);
+        return unit;
+    }
+    @PutMapping
+    private Unit updateUnit(@RequestBody Unit unit) {
+        return unitRepository.save(unit);
+    }
 }

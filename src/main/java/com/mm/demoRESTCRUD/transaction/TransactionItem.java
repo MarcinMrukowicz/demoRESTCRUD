@@ -11,8 +11,9 @@ public class TransactionItem {
     @Id
     long id;
     double numberOfUnits;
-    //@OneToMany(mappedBy = "transactionItem")
-    //List<ItemPrice> itemPrices;
+    @OneToMany
+    @JoinColumn(name="itemprice_id", nullable=false)
+    List<ItemPrice> itemPrices;
 
     public long getId() {
         return id;
@@ -30,11 +31,11 @@ public class TransactionItem {
         this.numberOfUnits = numberOfUnits;
     }
 
-    /*public List<ItemPrice> getItemPrices() {
+    public List<ItemPrice> getItemPrices() {
         return itemPrices;
     }
 
     public void setItemPrices(List<ItemPrice> itemPrices) {
         this.itemPrices = itemPrices;
-    }*/
+    }
 }

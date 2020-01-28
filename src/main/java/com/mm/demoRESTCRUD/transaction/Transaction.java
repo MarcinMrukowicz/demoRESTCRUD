@@ -17,8 +17,9 @@ public class Transaction {
     @JoinColumn(name="conctractor_id", nullable=false)
     Contractor conctractor;
 
-    //@OneToMany(mappedBy = "transaction")
-    //List<TransactionItem> transactionItems;
+    @OneToMany
+    @JoinColumn(name = "transaction_item_id", nullable = false)
+    List<TransactionItem> transactionItems;
 
     public Transaction() {
     }
@@ -39,11 +40,11 @@ public class Transaction {
         this.conctractor = conctractor;
     }
 
-    /*public List<TransactionItem> getTransactionItems() {
+    public List<TransactionItem> getTransactionItems() {
         return transactionItems;
     }
 
     public void setTransactionItems(List<TransactionItem> transactionItems) {
         this.transactionItems = transactionItems;
-    }*/
+    }
 }

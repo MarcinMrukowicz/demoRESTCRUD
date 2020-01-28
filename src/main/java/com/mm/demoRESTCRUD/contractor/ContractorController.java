@@ -22,5 +22,13 @@ public class ContractorController {
     private Contractor addContractor(@RequestBody Contractor contractor) {
         return contractorRepository.save(contractor);
     }
-
+    @DeleteMapping
+    private Contractor deleteContractor(@RequestBody Contractor contractor) {
+        contractorRepository.delete(contractor);
+        return contractor;
+    }
+    @PutMapping
+    private Contractor updateContractor(@RequestBody Contractor contractor) {
+        return contractorRepository.save(contractor);
+    }
 }

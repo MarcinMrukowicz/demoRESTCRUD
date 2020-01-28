@@ -23,4 +23,15 @@ public class ItemController {
     private Item addItem(@RequestBody Item item) {
         return itemRepository.save(item);
     }
+
+    @DeleteMapping
+    private Item deleteItem(@RequestBody Item item) {
+        itemRepository.delete(item);
+        return item;
+    }
+
+    @PutMapping
+    private Item updateItem(@RequestBody Item item) {
+        return itemRepository.save(item);
+    }
 }
