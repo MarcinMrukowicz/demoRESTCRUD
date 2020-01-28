@@ -1,9 +1,6 @@
 package com.mm.demoRESTCRUD.transaction;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import com.mm.demoRESTCRUD.contractor.Contractor;
 import com.mm.demoRESTCRUD.item.Item;
@@ -13,13 +10,18 @@ import java.util.List;
 @Entity
 public class Transaction {
     @Id
+    @GeneratedValue
     long id;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name="conctractor_id", nullable=false)
     Contractor conctractor;
 
-    @ManyToOne
-    List<TransactionItem> transactionItems;
+    //@OneToMany(mappedBy = "transaction")
+    //List<TransactionItem> transactionItems;
+
+    public Transaction() {
+    }
 
     public long getId() {
         return id;
@@ -37,11 +39,11 @@ public class Transaction {
         this.conctractor = conctractor;
     }
 
-    public List<TransactionItem> getTransactionItems() {
+    /*public List<TransactionItem> getTransactionItems() {
         return transactionItems;
     }
 
     public void setTransactionItems(List<TransactionItem> transactionItems) {
         this.transactionItems = transactionItems;
-    }
+    }*/
 }

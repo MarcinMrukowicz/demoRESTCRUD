@@ -11,9 +11,8 @@ public class TransactionItem {
     @Id
     long id;
     double numberOfUnits;
-    @ManyToOne(fetch= FetchType.LAZY)
-    @JoinColumn(name="id")
-    List<ItemPrice> itemPrices;
+    //@OneToMany(mappedBy = "transactionItem")
+    //List<ItemPrice> itemPrices;
 
     public long getId() {
         return id;
@@ -31,11 +30,11 @@ public class TransactionItem {
         this.numberOfUnits = numberOfUnits;
     }
 
-    public List<ItemPrice> getItemPrices() {
+    /*public List<ItemPrice> getItemPrices() {
         return itemPrices;
     }
 
     public void setItemPrices(List<ItemPrice> itemPrices) {
         this.itemPrices = itemPrices;
-    }
+    }*/
 }

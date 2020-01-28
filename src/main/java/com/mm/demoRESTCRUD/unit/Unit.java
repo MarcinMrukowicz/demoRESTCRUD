@@ -1,11 +1,13 @@
 package com.mm.demoRESTCRUD.unit;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Unit {
     @Id
+    @GeneratedValue
     long id;
 
     String name;
