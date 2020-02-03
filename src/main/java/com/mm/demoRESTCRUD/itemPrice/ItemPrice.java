@@ -1,4 +1,4 @@
-package com.mm.demoRESTCRUD.price;
+package com.mm.demoRESTCRUD.itemPrice;
 
 import com.mm.demoRESTCRUD.item.Item;
 

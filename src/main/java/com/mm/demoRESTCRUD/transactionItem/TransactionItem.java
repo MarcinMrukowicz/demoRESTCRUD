@@ -1,7 +1,6 @@
-package com.mm.demoRESTCRUD.transaction;
+package com.mm.demoRESTCRUD.transactionItem;
 
-import com.mm.demoRESTCRUD.item.Item;
-import com.mm.demoRESTCRUD.price.ItemPrice;
+import com.mm.demoRESTCRUD.itemPrice.ItemPrice;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,9 +10,9 @@ public class TransactionItem {
     @Id
     long id;
     double numberOfUnits;
-    @OneToMany
-    @JoinColumn(name="itemprice_id", nullable=false)
-    List<ItemPrice> itemPrices;
+    @OneToOne
+    @JoinColumn(name="itemprice_id")
+    ItemPrice itemPrice;
 
     public long getId() {
         return id;
@@ -31,11 +30,11 @@ public class TransactionItem {
         this.numberOfUnits = numberOfUnits;
     }
 
-    public List<ItemPrice> getItemPrices() {
-        return itemPrices;
+    public ItemPrice getItemPrice() {
+        return itemPrice;
     }
 
-    public void setItemPrices(List<ItemPrice> itemPrices) {
-        this.itemPrices = itemPrices;
+    public void setItemPrice(ItemPrice itemPrice) {
+        this.itemPrice = itemPrice;
     }
 }

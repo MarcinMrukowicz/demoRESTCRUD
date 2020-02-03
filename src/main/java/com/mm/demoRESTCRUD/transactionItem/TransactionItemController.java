@@ -1,4 +1,4 @@
-package com.mm.demoRESTCRUD.transaction;
+package com.mm.demoRESTCRUD.transactionItem;
 
 import com.mm.demoRESTCRUD.contractor.ContractorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

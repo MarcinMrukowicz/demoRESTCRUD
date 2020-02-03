@@ -1,4 +1,4 @@
-package com.mm.demoRESTCRUD.transaction;
+package com.mm.demoRESTCRUD.transactionItem;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 

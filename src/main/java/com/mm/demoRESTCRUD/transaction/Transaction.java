@@ -3,7 +3,7 @@ package com.mm.demoRESTCRUD.transaction;
 import javax.persistence.*;
 
 import com.mm.demoRESTCRUD.contractor.Contractor;
-import com.mm.demoRESTCRUD.item.Item;
+import com.mm.demoRESTCRUD.transactionItem.TransactionItem;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class Transaction {
     Contractor conctractor;
 
     @OneToMany
-    @JoinColumn(name = "transaction_item_id", nullable = false)
+    @JoinColumn(name = "transaction_item_id")
     List<TransactionItem> transactionItems;
 
     public Transaction() {
