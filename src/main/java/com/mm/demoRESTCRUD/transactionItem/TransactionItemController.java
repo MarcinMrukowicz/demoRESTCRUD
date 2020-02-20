@@ -1,5 +1,6 @@
 package com.mm.demoRESTCRUD.transactionItem;
 
+import com.mm.demoRESTCRUD.contractor.Contractor;
 import com.mm.demoRESTCRUD.contractor.ContractorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,11 @@ public class TransactionItemController {
     @GetMapping
     private ArrayList<TransactionItem> getAllTransactionItems() {
         return (ArrayList<TransactionItem>) transactionItemRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
+    private TransactionItem getTransactionItemById(@PathVariable(name="id") long id) {
+        return transactionItemRepository.findOneById(id);
     }
 
     @PostMapping

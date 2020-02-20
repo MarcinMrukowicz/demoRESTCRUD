@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("api/transaction")
 public class TransactionController {
@@ -19,6 +20,11 @@ public class TransactionController {
     @GetMapping
     private ArrayList<Transaction> getAllTransactions() {
         return (ArrayList<Transaction>) transactionRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
+    private Transaction getTransactionById(@PathVariable(name="id") long id) {
+        return transactionRepository.findOneById(id);
     }
 
     @PostMapping

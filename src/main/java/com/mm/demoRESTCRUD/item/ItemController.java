@@ -8,11 +8,17 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/item")
 public class ItemController {
     @Autowired
     private ItemRepository itemRepository;
+
+    @GetMapping(path = "/{id}")
+    private Item getItemById(@PathVariable(name="id") long id) {
+        return itemRepository.findOneById(id);
+    }
 
     @GetMapping
     private ArrayList<Item> getAllItems() {

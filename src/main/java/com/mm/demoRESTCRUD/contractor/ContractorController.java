@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/contractor")
 public class ContractorController {
@@ -16,6 +17,11 @@ public class ContractorController {
     @GetMapping
     private ArrayList<Contractor> getAllContractors() {
         return (ArrayList<Contractor>) contractorRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
+    private Contractor getContractorById(@PathVariable(name="id") long id) {
+        return contractorRepository.findOneById(id);
     }
 
     @PostMapping

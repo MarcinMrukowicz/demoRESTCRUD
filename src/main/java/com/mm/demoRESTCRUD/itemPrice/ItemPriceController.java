@@ -1,5 +1,6 @@
 package com.mm.demoRESTCRUD.itemPrice;
 
+import com.mm.demoRESTCRUD.contractor.Contractor;
 import com.mm.demoRESTCRUD.item.Item;
 import com.mm.demoRESTCRUD.item.ItemRepository;
 import com.mm.demoRESTCRUD.transactionItem.TransactionItem;
@@ -46,6 +47,11 @@ public class ItemPriceController {
         tri.setNumberOfUnits(10);
         tri.setItemPrice(itemPrice);
         transactionItemRepository.save(tri);
+    }
+
+    @GetMapping(path = "/{id}")
+    private ItemPrice getItemPriceById(@PathVariable(name="id") long id) {
+        return itemPriceRepository.findOneById(id);
     }
 
     @GetMapping
