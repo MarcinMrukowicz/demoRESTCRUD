@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contractor")
+@CrossOrigin
 public class ContractorController {
 
     @Autowired
@@ -20,6 +21,7 @@ public class ContractorController {
 
     @PostMapping
     private Contractor addContractor(@RequestBody Contractor contractor) {
+        // contractor.setName(contractor.getName() + " Sp. z.o.o.");
         return contractorRepository.save(contractor);
     }
     @DeleteMapping

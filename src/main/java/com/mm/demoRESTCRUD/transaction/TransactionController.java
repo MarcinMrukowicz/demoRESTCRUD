@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/transaction")
+@CrossOrigin
 public class TransactionController {
     @Autowired
     TransactionRepository transactionRepository;
@@ -19,6 +20,11 @@ public class TransactionController {
     @GetMapping
     private ArrayList<Transaction> getAllTransactions() {
         return (ArrayList<Transaction>) transactionRepository.findAll();
+    }
+    
+    @GetMapping("api/transaction/{id}")
+    private Transaction getOneById(@PathVariable long id) {
+        return transactionRepository.findOneById(id);
     }
 
     @PostMapping

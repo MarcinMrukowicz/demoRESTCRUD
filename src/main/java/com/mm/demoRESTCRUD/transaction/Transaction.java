@@ -14,8 +14,8 @@ public class Transaction {
     long id;
 
     @ManyToOne
-    @JoinColumn(name="conctractor_id", nullable=false)
-    Contractor conctractor;
+    @JoinColumn(name="contractor_id", nullable=false)
+    Contractor contractor;
 
     @OneToMany
     @JoinColumn(name = "transaction_item_id")
@@ -33,11 +33,11 @@ public class Transaction {
     }
 
     public Contractor getConctractor() {
-        return conctractor;
+        return contractor;
     }
 
     public void setConctractor(Contractor conctractor) {
-        this.conctractor = conctractor;
+        this.contractor = conctractor;
     }
 
     public List<TransactionItem> getTransactionItems() {

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/item")
+@CrossOrigin
 public class ItemController {
     @Autowired
     private ItemRepository itemRepository;
@@ -20,8 +21,9 @@ public class ItemController {
     }
 
     @PostMapping
-    private Item addItem(@RequestBody Item item) {
-        return itemRepository.save(item);
+    private boolean addItem(@RequestBody Item item) {
+        itemRepository.save(item);
+        return true;
     }
 
     @DeleteMapping

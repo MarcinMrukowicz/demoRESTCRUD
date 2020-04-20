@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/unit")
+@CrossOrigin
 public class UnitController {
     @Autowired
     private UnitRepository unitRepository;
@@ -14,6 +15,12 @@ public class UnitController {
     @GetMapping
     private ArrayList<Unit> getAllUnits() {
         return (ArrayList<Unit>) unitRepository.findAll();
+    }
+    
+    @GetMapping("/{id}")
+    private Unit getOneById(@PathVariable long id) {
+        System.out.println(id);
+        return unitRepository.findOneById(id);
     }
 
     @PostMapping

@@ -16,6 +16,7 @@ import java.util.Date;
 
 @RestController
 @RequestMapping("/api/itemPrice")
+@CrossOrigin
 public class ItemPriceController {
     @Autowired
     private ItemPriceRepository itemPriceRepository;
@@ -34,7 +35,7 @@ public class ItemPriceController {
         i.setName("jabłka");
         i.setUnit(u);
         i = itemRepository.save(i);
-        ItemPrice itemPrice = new ItemPrice();
+        /*ItemPrice itemPrice = new ItemPrice();
 
         //itemPrice.setId(10);
         itemPrice.setDate(new Date());
@@ -45,7 +46,7 @@ public class ItemPriceController {
 
         tri.setNumberOfUnits(10);
         tri.setItemPrice(itemPrice);
-        transactionItemRepository.save(tri);
+        transactionItemRepository.save(tri);*/
     }
 
     @GetMapping

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/transactionItem")
+@CrossOrigin
 public class TransactionItemController {
     @Autowired
     TransactionItemRepository transactionItemRepository;
